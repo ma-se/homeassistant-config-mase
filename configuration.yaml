@@ -1,11 +1,29 @@
+#########################################################################################
+# Table of content
 
-# Configure a default setup of Home Assistant (frontend, api, etc)
-default_config:
+# 1 config
+# 2 frontend
+# 3 lovelace
+# 4 tts
+# 5 inclusions
+
+#########################################################################################
+
+# start of configuring homeassistant
+config:
+
+# to configure themes of home assistant
+frontend:
+
+# Home Assistant dashboard -> ui-lovelace.yaml
+lovelace:
+  mode: yaml
 
 # Text to speech
 tts:
   - platform: google_translate
 
+# inclusions
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml

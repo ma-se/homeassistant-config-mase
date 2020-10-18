@@ -1,0 +1,62 @@
+# Title of dashboard
+title: Verena Marcello Home <3
+
+# tabs
+views:
+  # 1st tab
+  - title: overview
+    path: overview # Unique path for direct access /lovelace/${path}
+    # The cards to show on this view (tab).
+    cards:
+        # The filter card will filter entities for their state
+      - type: entity-filter
+        entities:
+          - device_tracker.marcello
+          - device_tracker.verena
+        state_filter:
+          - 'home'
+        card:
+          type: glance
+          title: Marcello und Verena sind zu Hause
+        # calendar
+      - type: calendar
+        entities:
+          - calendar.calendar_1
+          - calendar.calendar_2
+
+  # 2nd tab 
+  - title: alarm
+    cards:
+      - type: alarm-panel
+        name: House Alarm
+        entity: alarm_control_panel.alarm
+
+  # 3rd tab 
+  - title: weather
+    cards:
+      - type: weather-forecast
+        entity: weather.home
+
+  # 4th tab as icon
+  - icon: mdi:home-assistant
+    # Title of the view. Will be used as the tooltip for tab icon
+    title: Second view
+    cards:
+        # Entities card will take a list of entities and show their state.
+      - type: entities
+        # Title of the entities card
+        title: Example
+        # The entities here will be shown in the same order as specified.
+        # Each entry is an entity ID or a map with extra options.
+        entities:
+          - light.kitchen
+          - switch.ac
+          - entity: light.living_room
+            # Override the name to use
+            name: LR Lights
+
+        # The markdown card will render markdown text.
+      - type: markdown
+        title: Lovelace
+        content: >
+          Welcome to your **Lovelace UI**.
