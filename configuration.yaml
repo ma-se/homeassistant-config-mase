@@ -10,7 +10,7 @@
 #########################################################################################
 
 #  default config of homeassistant
-default_config:
+config:
 
 #  Home Assistant dashboard -> ui-lovelace.yaml
 lovelace:
@@ -25,6 +25,17 @@ group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
+
+panel_custom:
+  - name: example-panel
+    # url_path needs to be unique for each panel_custom config
+    url_path: redirect-server-controls
+    sidebar_title: Example Panel
+    sidebar_icon: mdi:server
+    module_url: /local/example-panel.js
+    config:
+      # Data you want to make available to panel
+      hello: world
 
 #  shopping list
 #  is included over frontend (Integrations > Configuration > Discovered)
