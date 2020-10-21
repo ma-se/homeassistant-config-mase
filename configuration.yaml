@@ -1,20 +1,25 @@
 #########################################################################################
 # TABLE OF CONTENT
-
-#  default_config
-#  lovelace
-#  tts
+#
+#  config
+#  lovelace (Dashboard)
+#  tts  (text to speech)
 #  inclusions
-#  shopping list
-
+#     group: 
+#     automation:
+#     script:
+#     scene:
+#
 #########################################################################################
 
-#  default config of homeassistant
+#  config of homeassistant
 config:
 
-#  Home Assistant dashboard -> ui-lovelace.yaml
+#  Home Assistant dashboards -> ui-lovelace.yaml
 lovelace:
   mode: yaml
+  # added custom dashboards at custom_components/lovelace/dashboards.yaml
+  dashboards: !include custom_components/lovelace/dashboards.yaml
 
 #  tts (Text to speech) 
 tts:
@@ -25,18 +30,3 @@ group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
-
-panel_custom:
-  - name: example-panel
-    # url_path needs to be unique for each panel_custom config
-    url_path: redirect-server-controls
-    sidebar_title: Example Panel
-    sidebar_icon: mdi:server
-    module_url: /local/example-panel.js
-    config:
-      # Data you want to make available to panel
-      hello: world
-
-#  shopping list
-#  is included over frontend (Integrations > Configuration > Discovered)
-#  shopping_list:

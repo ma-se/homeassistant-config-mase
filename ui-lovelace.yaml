@@ -1,7 +1,9 @@
-#  good inspiration https://github.com/shortbloke/home_assistant_config
+# file contains: (diese datei ist obligatorisch)
+# 1 dashboard Uebersicht
+# 2 All other Dashboards
 
 # Title of dashboard
-title: Rena Cello Home
+title: Overview
 # tabs
 views:
   # tab overview
@@ -44,3 +46,4 @@ views:
   # tab rena
   - title: rena
     path: rena
+
