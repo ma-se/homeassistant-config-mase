@@ -1,21 +1,24 @@
 #########################################################################################
-# TABLE OF CONTENT
-#
-#  config
-#  lovelace (Dashboard)
-#  tts  (text to speech)
-#  inclusions
-#     group: 
-#     automation:
-#     script:
-#     scene:
-#
+# HOME ASSISTANT CONFIGURATION
+# Autor: Marcello Serra
 #########################################################################################
 
-#  config of homeassistant
+# Enable configuration UI https://www.home-assistant.io/integrations/config/ 
 config:
 
-#  Home Assistant dashboards -> ui-lovelace.yaml
+# Display map to frontend https://www.home-assistant.io/integrations/map/
+map:
+
+# Display usage of devices https://www.home-assistant.io/integrations/history/
+history:
+
+# mqtt https://www.home-assistant.io/integrations/mqtt/ 
+mqtt: !include custom_components/mqtt/mqtt.yaml
+
+# Control lights over MQTT https://www.home-assistant.io/integrations/light.mqtt/ 
+light: !include custom_components/light/light.yaml
+  
+#  https://www.home-assistant.io/lovelace/
 lovelace:
   mode: yaml
   # added custom dashboards at custom_components/lovelace/dashboards.yaml
@@ -24,6 +27,15 @@ lovelace:
 #  tts (Text to speech) 
 tts:
   - platform: google_translate
+
+# shopping_list
+shopping_list:
+
+#  stream
+stream:
+
+#  camera
+camera: !include custom_components/camera/camera.yaml
 
 #  inclusions
 group: !include groups.yaml

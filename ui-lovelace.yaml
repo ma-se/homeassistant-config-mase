@@ -1,49 +1,27 @@
 # file contains: (diese datei ist obligatorisch)
-# 1 dashboard Uebersicht
-# 2 All other Dashboards
 
 # Title of dashboard
 title: Overview
+
 # tabs
 views:
   # tab overview
   - title: overview
     path: overview # Unique path for direct access /lovelace/${path}
-    # The cards to show on this view (tab).
     cards:
-        # card calendar
-      - type: calendar
-        entities:
-          - calendar.calendar_1
-          - calendar.calendar_2
-        # shopping list
-      - type: shopping-list
-        title: Shopping List
-
-  # tab weather
-  - title: weather
-    path: weather
-    cards:
+      # card light
+      - type: light
+        entity: light.moodlite
+      # gernerated cards
       # card weather
       - type: weather-forecast
         entity: weather.home
-
-  # security tab
-  - title: securtity
-    path: security
-  
-  # tab whatever
-  - icon: mdi:home-assistant
-    # Title of the view. Will be used as the tooltip for tab icon
-    title: Second view
-    cards:
-        # The markdown card will render markdown text.
+      # card calendar
+      - type: calendar
+        entities: 
+        - calendar.calendar_1
+      # card text
       - type: markdown
         title: Lovelace
         content: >
-          Welcome to your **Lovelace UI**.
-
-  # tab rena
-  - title: rena
-    path: rena
-
+          Notiz Block.
