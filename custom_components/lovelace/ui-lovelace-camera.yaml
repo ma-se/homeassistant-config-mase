@@ -1,0 +1,34 @@
+#  Dashboard for cameras
+
+# Title of dashboard
+title: cameras
+# tabs
+views:
+   # tab rena
+    # Title of the view. Will be used as the tooltip for tab icon
+  - title: cameras
+    cards:
+        # The markdown card will render markdown text.
+      - type: markdown
+        title: Titel
+        content: >
+          Inside camera feeds
+
+    cards:
+        # ESPCAM1 capture
+        - type: picture-entity
+          entity: camera.espcam_1_capture
+
+        # ESPCAM1 stream
+        - type: picture-entity
+          entity: camera.espcam_1_stream
+
+        # ESPCAM2 capture
+        - type: picture-entity
+          entity: camera.espcam_2_capture
+
+        # ESPCAM2 stream
+        - type: picture-entity
+          entity: camera.espcam_2_stream
+
+

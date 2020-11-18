@@ -1,0 +1,15 @@
+#  Dashboard for rena
+
+# Title of dashboard
+title: lights
+# tabs
+views:
+   # tab rena
+    # Title of the view. Will be used as the tooltip for tab icon
+  - title: lights
+    cards:
+        # The markdown card will render markdown text.
+      - type: markdown
+        title: Lovelace
+        content: >
+          insert lights

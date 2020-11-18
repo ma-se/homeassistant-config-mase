@@ -1,0 +1,17 @@
+#  Dashboard for weather
+title: weather
+
+# tabs
+views:
+  # tab overview
+  - title: weather
+    path: weather # Unique path for direct access /lovelace/${path}
+    cards:
+
+      # card weather
+      - type: weather-forecast
+        entity: weather.home
+           
+      # windy beautiful card
+      - type: iframe
+        url: https://embed.windy.com/embed2.html?lat=49.957&lon=9.263&detailLat=49.957&detailLon=9.263&width=650&height=450&zoom=10&level=surface&overlay=wind&product=ecmwf&menu=&message=&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1"

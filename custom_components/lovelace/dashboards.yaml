@@ -1,0 +1,26 @@
+# custom Dashboards
+# Dashboards in alphabetic order
+
+# 2rd dashboard CAMERA
+lovelace-camera:
+  mode: yaml
+  filename: /config/custom_components/lovelace/ui-lovelace-camera.yaml
+  title: camera
+  icon: mdi:camera-enhance-outline
+  show_in_sidebar: true
+
+# 3nd dashboard LIGHT
+lovelace-light:
+  mode: yaml
+  filename: /config/custom_components/lovelace/ui-lovelace-light.yaml
+  title: light
+  icon: mdi:lightbulb-on-outline
+  show_in_sidebar: true
+
+# 4th dashboard WEATHER
+lovelace-weather:
+  mode: yaml
+  filename: /config/custom_components/lovelace/ui-lovelace-weather.yaml
+  title: weather
+  icon: mdi:weather-sunny
+  show_in_sidebar: true

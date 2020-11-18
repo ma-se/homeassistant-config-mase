@@ -1,0 +1,36 @@
+platform: mqtt
+name: "moodlite"
+retain: true # ?
+state_topic: "stat/MOODLITE/POWER" # state_topic: "stat/tasmota/STATE" ?
+command_topic: "cmnd/MOODLITE/POWER" # ok
+availability_topic: "tele/MOODLITE/LWT" # ok
+optimistic: false
+brightness_state_topic: "stat/MOODLITE/Dimmer" # ?
+brightness_command_topic: "cmnd/MOODLITE/Dimmer" # ok
+brightness_value_template: "{{ value_json.Dimmer }}" # ok
+brightness_scale: 100 # ok
+rgb_state_topic: "stat/MOODLITE/Color" # ?
+rgb_command_topic: "cmnd/MOODLITE/Color" # ok
+rgb_value_template: "{{value_json.Color.split(',')[0:3]|join(',')}}"
+effect_state_topic: "stat/MOODLITE/Scheme" # ok
+effect_command_topic: "cmnd/MOODLITE/Scheme" # ok
+effect_value_template: "{{ value_json.Scheme }}" # ok
+effect_list:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+qos: 1 # ok
+payload_on: "ON" # ok
+payload_off: "OFF" # ok
+payload_available: "Online" # ok 
+payload_not_available: "Offline" # ok
